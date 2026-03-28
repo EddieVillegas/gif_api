@@ -1,27 +1,19 @@
-import React from 'react'
+import GifItem from "./GifItem";
 
-import GifItem from './GifItem'
+import PropTypes from "prop-types";
 
-import PropTypes from 'prop-types'
-
-const GifsList = ({gifList}) => {
-
-    const gifListComponent = gifList.map(gif => <GifItem gifItem={gif} key={gif.id}/>)
-    
-    return(
-        
-        <div className="row">
-
-            {gifListComponent}
-
-        </div>
-    )
-}
+const GifsList = ({ gifList }) => {
+  return (
+    <div className="row">
+      {gifList.length ? gifList?.map((gif) => <GifItem gifItem={gif} key={gif.id} />) : (
+        <p>Empty List</p>
+      )}
+    </div>
+  );
+};
 
 GifsList.propTypes = {
+  gifList: PropTypes.array.isRequired,
+};
 
-    gifList : PropTypes.array.isRequired
-
-}
-
-export default GifsList
+export default GifsList;

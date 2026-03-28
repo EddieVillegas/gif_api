@@ -1,11 +1,10 @@
-import React from 'react'
 import PropTypes from 'prop-types'
 
 const Error = ({message}) => (
 
-    <div class="card-panel red center-align">
+    <div className="card-panel red center-align">
 
-        <span class="white-text">
+        <span className="white-text">
       
             {message}
 
